@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".CreateEventActivity">
+
+    <TextView
+        android:id="@+id/create_event_title"
+        android:text="Esemény hozzáadása"
+        android:textSize="22sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginBottom="5sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/basic_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <TextView
+        android:id="@+id/create_event_title_date"
+        android:text="2022. október 4"
+        android:textColor="@color/basic_text"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginBottom="10sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/create_event_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/form"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/create_event_title_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Cím:"
+                style="@style/form_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <EditText
+                android:id="@+id/title"
+                android:textAppearance="@style/form_input"
+                style="@style/form_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Leírás:"
+                style="@style/form_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <EditText
+                android:id="@+id/desc"
+                android:textAppearance="@style/form_input"
+                style="@style/form_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Kezdete:"
+                style="@style/form_text"
+                android:layout_marginBottom="0sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TimePicker
+                android:id="@+id/start_time"
+                android:scaleY="0.75"
+                android:scaleX="0.75"
+                android:timePickerMode="spinner"
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                >
+            </TimePicker>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="0sp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Vége:"
+                style="@style/form_text"
+                android:layout_marginBottom="0sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TimePicker
+                android:id="@+id/end_time"
+                android:scaleY="0.75"
+                android:scaleX="0.75"
+                android:timePickerMode="spinner"
+                android:layout_width="match_parent"
+                android:layout_height="150sp">
+            </TimePicker>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/save_btn"
+        android:text="@string/save_event_btn"
+        app:layout_constraintTop_toBottomOf="@id/form"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cancel_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/cancel_btn"
+        android:text="@string/cancel_event_btn"
+        style="@style/btn_danger"
+        app:layout_constraintTop_toBottomOf="@id/form"
+        app:layout_constraintStart_toEndOf="@id/save_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

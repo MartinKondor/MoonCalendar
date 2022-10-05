@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MoonCalendar</string>
+    <string name="event_save_success">Az esemény sikeresen mentésre került!</string>
+    <string name="SPNAME_LAST_OPENED_DAY">lod</string>
+    <string name="SPNAME_CURRENT_YEAR">cy</string>
+    <string name="SPNAME_CURRENT_MONTH">cm</string>
+    <string name="SPNAME_ACTIVE_DAY">acd</string>
+    <string name="add_event_btn">+ Esemény hozzáadása</string>
+    <string name="save_event_btn">Mentés</string>
+    <string name="cancel_event_btn">Mégsem</string>
+</resources>

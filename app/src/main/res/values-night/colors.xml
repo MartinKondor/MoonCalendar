@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main_200">#4095C3</color>
+    <color name="main_500">#2E6A8A</color>
+    <color name="main_700">#23516A</color>
+    <color name="secondary_200">#C5734D</color>
+    <color name="secondary_700">#573322</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#E63333</color>
+    <color name="gray_200">#494949</color>
+    <color name="gray_500">#606060</color>
+    <color name="gray_700">#D1D1D1</color>
+    <color name="active_text">#FF0202</color>
+    <color name="muted_text">#7F7F7F</color>
+    <color name="basic_text">#FFF9FB</color>
+    <color name="bg_color">#000000</color>
+</resources>

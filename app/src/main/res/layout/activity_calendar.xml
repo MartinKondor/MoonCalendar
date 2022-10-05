@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_color"
+    tools:context=".CalendarActivity">
+
+    <TextView
+        android:id="@+id/calendar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/day_name"
+        android:gravity="center"
+        android:text="2022. Január"
+        android:padding="5sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/day_names"
+        >
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/day_names"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="7"
+        android:padding="10sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/calendar_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_name"
+            android:text="H"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_name"
+            android:text="K"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_name"
+            android:text="Sz"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_name"
+            android:text="Cs"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_name"
+            android:text="P"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_name"
+            android:text="Sz"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_name"
+            android:text="V"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider_under_day_names"
+        style="@style/divider"
+        app:layout_constraintTop_toBottomOf="@id/day_names"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+    </View>
+
+    <LinearLayout
+        android:id="@+id/day_numbers_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="0sp"
+        android:padding="10sp"
+        android:gravity="center"
+        android:weightSum="7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_under_day_names"
+        >
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number_active"
+            android:text="1"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="2"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="3"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="4"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="5"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="6"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="7"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/day_numbers_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="0sp"
+        android:padding="10sp"
+        android:gravity="center"
+        android:weightSum="7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/day_numbers_1"
+        >
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="8"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="9"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="10"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="11"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="12"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="13"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="14"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/day_numbers_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="0sp"
+        android:padding="10sp"
+        android:gravity="center"
+        android:weightSum="7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/day_numbers_2"
+        >
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="15"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="16"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="17"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="18"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="19"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="20"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="21"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/day_numbers_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="0sp"
+        android:padding="10sp"
+        android:gravity="center"
+        android:weightSum="7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/day_numbers_3"
+        >
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="22"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="23"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="24"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="25"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="26"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="27"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="28"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/day_numbers_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="0sp"
+        android:padding="10sp"
+        android:gravity="center"
+        android:weightSum="7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/day_numbers_4"
+        >
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="29"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="30"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="31"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="-"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="-"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="-"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="-"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/day_numbers_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="0sp"
+        android:padding="10sp"
+        android:gravity="center"
+        android:weightSum="7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/day_numbers_5"
+        >
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="-"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="-"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="-"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="-"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="-"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="-"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            style="@style/day_number"
+            android:text="-"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider_above_events"
+        style="@style/divider"
+        app:layout_constraintTop_toBottomOf="@id/day_numbers_6"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+    </View>
+
+    <TextView
+        android:id="@+id/event_day_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Események 1.:"
+        android:layout_margin="5sp"
+        style="@style/event_day_name"
+        app:layout_constraintTop_toBottomOf="@id/divider_above_events"
+        app:layout_constraintStart_toStartOf="parent">
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/event_day_name"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/plus_event_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:layout_margin="1sp"
+            android:text="@string/add_event_btn"
+            >
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/events"
+        app:layout_constraintTop_toBottomOf="@id/buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constrainedHeight="true"
+        android:paddingStart="15sp"
+        android:paddingEnd="15sp"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:id="@+id/events_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:clickable="true"
+            android:scrollIndicators="right"
+            android:fadeScrollbars="false"
+            >
+
+            <LinearLayout
+                android:id="@+id/events_container"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="day_name" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">22sp</item>
+        <item name="android:layout_margin">1sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/basic_text</item>
+    </style>
+
+    <style name="event_day_name" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_margin">1sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/basic_text</item>
+    </style>
+
+    <style name="event_time" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_marginTop">15sp</item>
+        <item name="android:layout_marginBottom">1sp</item>
+        <item name="android:layout_marginStart">5sp</item>
+        <item name="android:layout_marginEnd">5sp</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/muted_text</item>
+    </style>
+
+    <style name="event_title" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">19sp</item>
+        <item name="android:paddingTop">5sp</item>
+        <item name="android:paddingBottom">5sp</item>
+        <item name="android:paddingStart">8sp</item>
+        <item name="android:paddingEnd">8sp</item>
+        <item name="android:layout_margin">1sp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:background">@color/gray_700</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/basic_text</item>
+    </style>
+
+    <style name="event_desc" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_marginTop">1sp</item>
+        <item name="android:layout_marginBottom">1sp</item>
+        <item name="android:layout_marginStart">1sp</item>
+        <item name="android:layout_marginEnd">1sp</item>
+        <item name="android:paddingTop">5sp</item>
+        <item name="android:paddingBottom">20sp</item>
+        <item name="android:paddingStart">8sp</item>
+        <item name="android:paddingEnd">8sp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/basic_text</item>
+    </style>
+
+    <style name="day_number" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">22sp</item>
+        <item name="android:layout_margin">1sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/muted_text</item>
+    </style>
+
+    <style name="day_number_active" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">22sp</item>
+        <item name="android:layout_margin">1sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/active_text</item>
+    </style>
+
+    <style name="divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:background">@color/gray_200</item>
+    </style>
+
+    <style name="event_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">@color/gray_200</item>
+    </style>
+
+    <style name="form_text">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/basic_text</item>
+        <item name="android:layout_marginLeft">0sp</item>
+        <item name="android:layout_marginRight">0sp</item>
+        <item name="android:layout_marginTop">0sp</item>
+        <item name="android:layout_marginBottom">0sp</item>
+    </style>
+
+    <style name="form_input">
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_marginLeft">20sp</item>
+        <item name="android:layout_marginRight">20sp</item>
+        <item name="android:layout_marginTop">5sp</item>
+        <item name="android:layout_marginBottom">0sp</item>
+    </style>
+
+    <style name="btn_danger">
+        <item name="android:backgroundTint">@color/red</item>
+    </style>
+</resources>
