@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="main_200">#4095C3</color>
+    <color name="main_200">#23516A</color>
     <color name="main_500">#2E6A8A</color>
-    <color name="main_700">#23516A</color>
+    <color name="main_700">#4095C3</color>
     <color name="secondary_200">#C5734D</color>
     <color name="secondary_700">#573322</color>
     <color name="black">#FF000000</color>
