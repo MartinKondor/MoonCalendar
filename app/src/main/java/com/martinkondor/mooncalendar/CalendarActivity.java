@@ -10,7 +10,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.ArrayMap;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -162,7 +161,7 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     private ArrayList<TextView> getAllDayNumbers() {
-        ArrayList<TextView> dayNumbersAll = new ArrayList<TextView>();
+        ArrayList<TextView> dayNumbersAll = new ArrayList<>();
         dayNumbersAll.addAll(dayNumbers1);
         dayNumbersAll.addAll(dayNumbers2);
         dayNumbersAll.addAll(dayNumbers3);
@@ -221,13 +220,14 @@ public class CalendarActivity extends AppCompatActivity {
 
         // Get the events saved for this day
         if (!eventsPerDays.containsKey(day)) {
-            eventsPerDays.put(day, new ArrayList<Event>());
+            eventsPerDays.put(day, new ArrayList<>());
         }
         ArrayList<Event> events = eventsPerDays.get(day);
 
         // Remove previously shown events
         eventContainer.removeAllViews();
 
+        // events != null &&
         if (!events.isEmpty()) {
 
             // If the day has events then load them in
@@ -294,7 +294,7 @@ public class CalendarActivity extends AppCompatActivity {
 
     /**
      * Set an event's view and return it as a LinearLayout
-     * @return
+     * @return m
      */
     private LinearLayout getCurrentEventView(
             Event e, View.OnLongClickListener onLongClkList, View.OnClickListener onClkList) {
@@ -350,9 +350,9 @@ public class CalendarActivity extends AppCompatActivity {
 
     /**
      * Load events from the database into the eventsPerDays object
-     * @param year
-     * @param month
-     * @param numberOfDays
+     * @param year y
+     * @param month m
+     * @param numberOfDays n
      */
     private void loadEvents(int year, int month, int numberOfDays) {
         db.loadEvents(eventsPerDays, year, month, numberOfDays);
@@ -363,7 +363,7 @@ public class CalendarActivity extends AppCompatActivity {
      * day's text.
      * @param numberOfDays the number of days needed to be filled
      * @param startDayInWeekIndex the starting day's index
-     * @return
+     * @return m
      */
     private boolean fillDays(int numberOfDays, int startDayInWeekIndex) {
         int dayCounter = 1;
@@ -411,7 +411,7 @@ public class CalendarActivity extends AppCompatActivity {
 
     /**
      * Sets the active day's style
-     * @param day
+     * @param day d
      */
     @SuppressLint("NewApi")
     private void setActiveDay(TextView day) {
@@ -437,8 +437,8 @@ public class CalendarActivity extends AppCompatActivity {
 
     /**
      * Returns the dayNumbers that the given day sits in
-     * @param day
-     * @return
+     * @param day d
+     * @return m
      */
     private ArrayList<TextView> getCurrentWeekDays(int day) {
         double div = day / 7.0;
@@ -452,8 +452,8 @@ public class CalendarActivity extends AppCompatActivity {
 
     /**
      * Calculates the active day's and returns the TextView
-     * @param day
-     * @return
+     * @param day d
+     * @return m
      */
     private TextView calcActiveDay(int day) {
         int dayIndex = day % 7;

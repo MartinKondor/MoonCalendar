@@ -48,9 +48,9 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     /**
      * Delete database on VERSION change
-     * @param db
-     * @param oldVersion
-     * @param newVersion
+     * @param db d
+     * @param oldVersion o
+     * @param newVersion n
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -129,13 +129,12 @@ public class DatabaseManager extends SQLiteOpenHelper {
         String selectionStr = YEAR_COL + "=? AND " +
                 MONTH_COL + "=? AND " +
                 DAY_COL + "=?";
-        Cursor c = db.query(TABLE_NAME, tableColumns, selectionStr, selectionArgs, null, null, TIME_COL);
-        return c;
+        return (Cursor) db.query(
+                TABLE_NAME, tableColumns, selectionStr, selectionArgs, null, null, TIME_COL);
     }
 
     /**
      * Loads events in the given eventsPerDays param
-     * @param eventsPerDays ArrayMap<Integer, ArrayList<Event>> that will be filled up
      * @param year the year of the events
      * @param month the month of the events
      * @param numberOfDays number of day in the given month
