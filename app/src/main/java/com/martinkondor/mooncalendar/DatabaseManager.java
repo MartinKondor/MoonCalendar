@@ -110,6 +110,11 @@ public class DatabaseManager extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void updateEvent(Event e) {
+        deleteEvent(e.getId());
+        insertEvent(e);
+    }
+
     /**
      * Load and return the cursor for all the events of the asked day
      * @param db database instance given

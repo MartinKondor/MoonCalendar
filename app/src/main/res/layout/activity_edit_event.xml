@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_color"
-    tools:context=".CreateEventActivity">
+    tools:context=".EditEventActivity">
 
     <TextView
-        android:id="@+id/create_event_title"
-        android:text="Esemény hozzáadása"
+        android:id="@+id/edit_event_title"
+        android:text="Esemény szerkesztése"
         android:textSize="22sp"
         android:textAllCaps="true"
         android:textStyle="bold"
@@ -21,15 +20,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/create_event_title_date"
+        app:layout_constraintBottom_toTopOf="@id/edit_event_title_date"
         android:textColor="@color/basic_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </TextView>
 
     <TextView
-        android:id="@+id/create_event_title_date"
-        android:text="2022. október 4"
+        android:id="@+id/edit_event_title_date"
+        android:text="2022. október 12"
         android:textColor="@color/basic_text"
         android:textSize="20sp"
         android:textAllCaps="true"
@@ -39,7 +38,7 @@
         android:layout_marginRight="10sp"
         android:layout_marginBottom="10sp"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/create_event_title"
+        app:layout_constraintTop_toBottomOf="@id/edit_event_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
@@ -49,7 +48,7 @@
     <LinearLayout
         android:id="@+id/form"
         android:scrollbars="vertical"
-        app:layout_constraintTop_toBottomOf="@id/create_event_title_date"
+        app:layout_constraintTop_toBottomOf="@id/edit_event_title_date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical"
@@ -71,7 +70,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/title"
+                android:id="@+id/title_input"
                 android:textAppearance="@style/form_input"
                 style="@style/form_input"
                 android:layout_width="match_parent"
@@ -95,7 +94,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/desc"
+                android:id="@+id/desc_input"
                 android:textAppearance="@style/form_input"
                 style="@style/form_input"
                 android:layout_width="match_parent"

@@ -59,11 +59,11 @@ public class CreateEventActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String errorMessage = saveEvent();
                 if (errorMessage.length() == 0) {
-                    sendToastMessage(getResources().getString(R.string.event_save_success));
+                    Utils.sendToastMessage(getApplicationContext(), getResources().getString(R.string.event_save_success));
                     startActivity(new Intent(CreateEventActivity.this, CalendarActivity.class));
                 }
                 else {
-                    sendToastMessage(errorMessage);
+                    Utils.sendToastMessage(getApplicationContext(), errorMessage);
                 }
             }
         });
@@ -90,51 +90,6 @@ public class CreateEventActivity extends AppCompatActivity {
     }
 
     /**
-     * Sends toast message to the view
-     * @param msg
-     */
-    private void sendToastMessage(String msg) {
-        Context ctx = CreateEventActivity.this.getApplicationContext();
-        Toast.makeText(ctx, msg, Toast.LENGTH_SHORT).show();
-    }
-
-    private String addZeroInCase(int time) {
-        return addZeroInCase(String.valueOf(time));
-    }
-
-    /**
-     * Adds a zero before the time to make it look nicer
-     * @param time (like 1, 9, 10, 34, 45)
-     * @return (like 01, 09, 10, 34, 45)
-     */
-    private String addZeroInCase(String time) {
-        return time.length() == 1 ? ("0" + time) : time;
-    }
-
-    /**
-     * Creates a string from the input elements
-     * that looks like this: start_time - end_time
-     *
-     * Example:
-     * start_time = 10:00
-     * end_time = 12:00
-     * then this returns = "10:00 - 12:00"
-     *
-     * @return formatted string
-     */
-    private String createTimeStringFromInput() {
-        String sh = String.valueOf(startTimeInput.getHour());
-        String sm = String.valueOf(startTimeInput.getMinute());
-        String eh = String.valueOf(endTimeInput.getHour());
-        String em = String.valueOf(endTimeInput.getMinute());
-        sh = addZeroInCase(sh);
-        sm = addZeroInCase(sm);
-        eh = addZeroInCase(eh);
-        em = addZeroInCase(em);
-        return String.format("%s:%s - %s:%s", sh, sm, eh, em);
-    }
-
-    /**
      * Saves the event from the EditText elements
      * to the database
      */
@@ -145,7 +100,7 @@ public class CreateEventActivity extends AppCompatActivity {
         String descInputed = descInput.getText().toString();
 
         if (titleInputed.length() == 0) {
-            return "Kérjük adjon meg egy esemény címet";
+            return getString(R.string.please_give_event_name);
         }
 
         Event e = new Event();
@@ -167,7 +122,7 @@ public class CreateEventActivity extends AppCompatActivity {
         e.setDesc(descInputed);
         e.setYear(currentYear);
         e.setMonth(currentMonth);
-        e.setTime(createTimeStringFromInput());
+        e.setTime(Utils.createTimeStringFromInput(startTimeInput, endTimeInput));
         e.setDay(lastOpenedDay);
 
         // Insert event to database

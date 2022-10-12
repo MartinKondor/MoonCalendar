@@ -20,6 +20,10 @@ import java.util.ArrayList;
 
 /**
  * Main activity with the calendar shown
+ *
+ * TODO:
+ * [x] Delete events on long press
+ * [] Edit events on click
  */
 public class CalendarActivity extends AppCompatActivity {
 
@@ -231,40 +235,63 @@ public class CalendarActivity extends AppCompatActivity {
 
             // If the day has events then load them in
             for (Event e : events) {
+                View.OnLongClickListener onLongClkList = getOnLongClickListenerForEvent(e);
                 View.OnClickListener onClkList = getOnClickListenerForEvent(e);
-                LinearLayout eventStore = getCurrentEventView(e, onClkList);
+
+                LinearLayout eventStore = getCurrentEventView(e, onLongClkList, onClkList);
                 eventContainer.addView(eventStore);
             }
         }  // / if (!events.isEmpty())
     }
 
     private View.OnClickListener getOnClickListenerForEvent(Event e) {
-        return view -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(CalendarActivity.this);
-            builder.setTitle("Esemény törlése");
-            builder.setMessage(
-                    "Biztos benne hogy törölni szeretné a(z) \"" +
-                            e.getTitle() +
-                            "\" nevű eseményt?"
-            );
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CalendarActivity.this, EditEventActivity.class);
+                intent.putExtra("e.id", e.getId());
+                intent.putExtra("e.title", e.getTitle());
+                intent.putExtra("e.desc", e.getDesc());
+                intent.putExtra("e.time", e.getTime());
+                intent.putExtra("e.year", e.getYear());
+                intent.putExtra("e.month", e.getMonth());
+                intent.putExtra("e.day", e.getDay());
+                startActivity(intent);
+            }
+        };
+    }
 
-            builder.setPositiveButton("IGEN", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    CalendarActivity.this.db.deleteEvent(e.getId());
-                    CalendarActivity.this.rebuildUI();
-                    dialog.dismiss();
-                }
-            });
+    private View.OnLongClickListener getOnLongClickListenerForEvent(Event e) {
+        return new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(CalendarActivity.this);
+                builder.setTitle("Esemény törlése");
+                builder.setMessage(
+                        "Biztos benne hogy törölni szeretné a(z) \"" +
+                                e.getTitle() +
+                                "\" nevű eseményt?"
+                );
 
-            builder.setNegativeButton("NEM", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            });
+                builder.setPositiveButton("IGEN", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        CalendarActivity.this.db.deleteEvent(e.getId());
+                        CalendarActivity.this.rebuildUI();
+                        dialog.dismiss();
+                    }
+                });
 
-            AlertDialog alert = builder.create();
-            alert.show();
+                builder.setNegativeButton("NEM", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+                return true;
+            }
         };
     }
 
@@ -272,12 +299,14 @@ public class CalendarActivity extends AppCompatActivity {
      * Set an event's view and return it as a LinearLayout
      * @return
      */
-    private LinearLayout getCurrentEventView(Event e, View.OnClickListener onClkList) {
+    private LinearLayout getCurrentEventView(
+            Event e, View.OnLongClickListener onLongClkList, View.OnClickListener onClkList) {
 
         // Create the rows for an event to be shown
         LinearLayout eventStore = new LinearLayout(this);
         eventStore.setClickable(true);
         eventStore.setOrientation(LinearLayout.VERTICAL);
+        eventStore.setOnLongClickListener(onLongClkList);
         eventStore.setOnClickListener(onClkList);
 
         // The time row
@@ -285,6 +314,7 @@ public class CalendarActivity extends AppCompatActivity {
         timeView.setText(e.getTime());
         timeView.setTextAppearance(R.style.event_time);
         timeView.setClickable(true);
+        timeView.setOnLongClickListener(onLongClkList);
         timeView.setOnClickListener(onClkList);
 
         // The title row
@@ -292,6 +322,7 @@ public class CalendarActivity extends AppCompatActivity {
         titleView.setText(e.getTitle());
         titleView.setTextAppearance(R.style.event_title);
         titleView.setClickable(true);
+        titleView.setOnLongClickListener(onLongClkList);
         titleView.setOnClickListener(onClkList);
 
         // The description row
@@ -299,6 +330,7 @@ public class CalendarActivity extends AppCompatActivity {
         descView.setText(e.getDesc());
         descView.setTextAppearance(R.style.event_desc);
         descView.setClickable(true);
+        descView.setOnLongClickListener(onLongClkList);
         descView.setOnClickListener(onClkList);
 
         // A divider for "margin" between events

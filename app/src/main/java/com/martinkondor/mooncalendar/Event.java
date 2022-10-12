@@ -117,6 +117,16 @@ public class Event {
         this.desc = desc;
     }
 
+    public boolean hasNull() {
+        // this.desc can be ""
+        return this.id == -1 ||
+                this.title.length() == 0 ||
+                this.time.length() == 0 ||
+                this.day == 0 ||
+                this.year == 0 ||
+                this.month == 0;
+    }
+
     @Override
     public String toString() {
         return "Event{" +

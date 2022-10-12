@@ -1,9 +1,12 @@
 package com.martinkondor.mooncalendar;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -103,6 +106,68 @@ public class Utils {
         }
         int[] monthsWith31Days = {1, 3, 5, 7, 8, 10, 12};
         return Utils.isIn(monthsWith31Days, month) ? 31 : 30;
+    }
+
+    /**
+     *
+     * @param time in format: HH:mm
+     * @return int[] {Hour, Minute}
+     */
+    public static int[] getTime(String time) {
+        String[] parts = time.split(":");
+        parts[0] = parts[0].trim();
+        parts[1] = parts[1].trim();
+        return new int[] {
+                Integer.parseInt(parts[0]),
+                Integer.parseInt(parts[1])
+        };
+    }
+
+    /**
+     * Creates a string from the input elements
+     * that looks like this: start_time - end_time
+     *
+     * Example:
+     * start_time = 10:00
+     * end_time = 12:00
+     * then this returns = "10:00 - 12:00"
+     *
+     * @return formatted string
+     */
+    public static String createTimeStringFromInput(
+            TimePicker startTimeInput, TimePicker endTimeInput) {
+
+        String sh = String.valueOf(startTimeInput.getHour());
+        String sm = String.valueOf(startTimeInput.getMinute());
+        String eh = String.valueOf(endTimeInput.getHour());
+        String em = String.valueOf(endTimeInput.getMinute());
+        sh = Utils.addZeroInCase(sh);
+        sm = Utils.addZeroInCase(sm);
+        eh = Utils.addZeroInCase(eh);
+        em = Utils.addZeroInCase(em);
+        return String.format("%s:%s - %s:%s", sh, sm, eh, em);
+    }
+
+    public static String addZeroInCase(int time) {
+        return addZeroInCase(String.valueOf(time));
+    }
+
+    /**
+     * Adds a zero before the time to make it look nicer
+     * @param time (like 1, 9, 10, 34, 45)
+     * @return (like 01, 09, 10, 34, 45)
+     */
+    public static String addZeroInCase(String time) {
+        return time.length() == 1 ? ("0" + time) : time;
+    }
+
+    /**
+     * Sends toast message to the view
+     * @param ctx
+     * @param msg
+     */
+    public static void sendToastMessage(Context ctx, String msg) {
+        Toast.makeText(ctx, msg, Toast.LENGTH_LONG).show();
     }
 
 }

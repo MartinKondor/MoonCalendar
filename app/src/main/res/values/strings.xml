@@ -8,4 +8,7 @@
     <string name="add_event_btn">+ Esemény hozzáadása</string>
     <string name="save_event_btn">Mentés</string>
     <string name="cancel_event_btn">Mégsem</string>
+    <string name="event_open_error">Hiba történt az esemény megnyitása közben</string>
+    <string name="event_edit_success">Az esemény sikeresen módosítva lett!</string>
+    <string name="please_give_event_name">Kérjük adjon meg egy esemény címet</string>
 </resources>
