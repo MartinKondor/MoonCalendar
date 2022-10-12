@@ -21,9 +21,6 @@ import java.util.ArrayList;
 /**
  * Main activity with the calendar shown
  *
- * TODO:
- * [x] Delete events on long press
- * [] Edit events on click
  */
 public class CalendarActivity extends AppCompatActivity {
 
