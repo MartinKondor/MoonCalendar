@@ -313,6 +313,9 @@ public class CalendarActivity extends AppCompatActivity {
         timeView.setClickable(true);
         timeView.setOnLongClickListener(onLongClkList);
         timeView.setOnClickListener(onClkList);
+        //timeView.setBackgroundColor(getResources().getColor(R.color.gray_200));
+        timeView.setPadding(5, 10, 5, 10);
+        timeView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
         // The title row
         TextView titleView = new TextView(this);

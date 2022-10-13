@@ -18,13 +18,13 @@
     </style>
 
     <style name="event_time" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">17sp</item>
-        <item name="android:layout_marginTop">15sp</item>
-        <item name="android:layout_marginBottom">1sp</item>
-        <item name="android:layout_marginStart">5sp</item>
-        <item name="android:layout_marginEnd">5sp</item>
-        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginTop">0sp</item>
+        <item name="android:layout_marginBottom">0sp</item>
+        <item name="android:layout_marginStart">0sp</item>
+        <item name="android:layout_marginEnd">0sp</item>
         <item name="android:textStyle">normal</item>
+        <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/muted_text</item>
     </style>
 

@@ -14,5 +14,6 @@
     <color name="active_text">#FF0202</color>
     <color name="muted_text">#7F7F7F</color>
     <color name="basic_text">#020202</color>
+    <color name="light_basic_text">#252525</color>
     <color name="bg_color">#FFF9FB</color>
 </resources>
