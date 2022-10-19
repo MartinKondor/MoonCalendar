@@ -11,4 +11,8 @@
     <string name="event_open_error">Hiba történt az esemény megnyitása közben</string>
     <string name="event_edit_success">Az esemény sikeresen módosítva lett!</string>
     <string name="please_give_event_name">Kérjük adjon meg egy esemény címet</string>
+    <string name="menu_calendar_btn">Naptár</string>
+    <string name="menu_settings_btn">Beállítások</string>
+    <string name="menu_open">Open</string>
+    <string name="menu_close">Close</string>
 </resources>
