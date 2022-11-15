@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -278,6 +279,11 @@ public class CalendarActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         CalendarActivity.this.db.deleteEvent(e.getId());
                         CalendarActivity.this.rebuildUI();
+
+                        Toast.makeText(
+                                CalendarActivity.this,
+                                "Az eseményt sikeresen töröltük!",
+                                Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     }
                 });
