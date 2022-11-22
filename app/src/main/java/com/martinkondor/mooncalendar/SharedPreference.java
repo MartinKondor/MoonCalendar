@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 public class SharedPreference {
     /**
      * Most likely used preference names:
-     * - R.string: The lastly opened day in the CalendarActivity
+     * - lod: The lastly opened day in the CalendarActivity
      * - cy: The current year
      * - cm: The current month
      * - acd: The current active day
